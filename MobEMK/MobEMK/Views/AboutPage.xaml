@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobEMK.Views.AboutPage"
+             xmlns:vm="clr-namespace:MobEMK.ViewModels"
+             Title="Новости">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            <Label Text="Новости" FontSize="Title"/>
+            <Label Text="10.10.2023" FontSize="14" Padding="0,0,0,0"/>
+        </StackLayout>
+
+        <StackLayout VerticalOptions="FillAndExpand" Grid.Row="1" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="newses.jpeg" VerticalOptions="Center" HeightRequest="200" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="2">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label FontSize="16" Padding="0,24,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span FontSize="24" Text="студенческий конкурс"/>
+                                <Span FontSize="24" Text="Предпринимательская проба"/>
+                                <Span FontSize="18" Text="Екатеринбургский монтажный колледж организовал областной студенческий конкурс 'Предпринимательская проба'. В составе авторитетного жюри были действую..."/>
+                                <Span Text="10.10.2023" FontSize="14"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
